@@ -1,0 +1,186 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    background-color: #253d57;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* Styling for dashboard title */
+.dashboard-title {
+    color: #fff;
+    font-weight: bold;
+    font-size: 60px;
+}
+
+/* Styling for main container */
+.container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+/* Style the aside section with search and city buttons */
+.search-and-buttons {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-right: 100px;
+}
+
+/* Style the search bar and city buttons */
+.search h2 {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Styling for the city search input */
+input[type="text"] {
+    padding: 5px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    margin-bottom: 10px;
+}
+
+/* Styling for the city search button */
+.search button {
+    align-self: center;
+    width: 70%;
+    height: 25px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.1s;
+}
+
+/*Styling for the active state of the search button */
+.search button:active {
+    background-color: yellow;
+}
+
+/* Styling for the container of city buttons */
+.city-buttons {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* styling for individual city buttons */
+.city-button {
+    margin: 10px 0;
+    width: 400%;
+    padding: 8px;
+    background-color: rgb(161, 157, 157);
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.1s;
+}
+
+/* Styling for the active state of city buttons */
+.city-button:active {
+    background-color: #007BFF;
+}
+
+/* Style the main content */
+.main-content {
+    display: flex;
+    padding: 50px;
+    margin-top: 10px;
+    flex-direction: column;
+}
+
+/* Styling for the current weather section */
+.current-weather {
+    display: flex;
+    border: 2px solid #000;
+    padding: 10px;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+/* Style the city name and date */
+.city-details {
+    flex: 1;
+    text-align: left;
+    padding: 10px;
+
+}
+
+/* Styling for the city name */
+#city-name {
+    color: #000;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/* Styling for the current date*/
+#current-date {
+    color: #000;
+    margin-top: 0;
+}
+
+/* Styling for the weather details section */
+.weather-details {
+    flex: 1;
+    text-align: left;
+    padding: 10px;
+}
+
+/* Style the weather details under the city name and date */
+.weather-details p {
+    color: #000;
+}
+
+/*Styling for the 5-day forecast section */
+.forecast {
+    padding: 10px;
+    text-align: center;
+}
+
+/*Styling for the heading elements */
+h2 {
+    color: #000;
+}
+
+/* Style for the container of 5-day forecast items */
+.forecast-details {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+
+
+/* Style the dark blue boxes for the 5-day forecast */
+.day {
+    flex-basis: calc(20% - 20px);
+    background-color: #007BFF;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.day:last-child {
+    margin-right: 0;
+}
+
+.date {
+    font-weight: bold;
+}
+
+

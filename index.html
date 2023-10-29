@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en-us">    
+<head>
+    <meta charset="UTF-8">
+    <title>Weather Dashboard</title>
+    <!--stylesheet links-->
+    <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+</head>
+<body>
+    <header class="header">
+        <!--Header section with the title-->
+        <h1 class="dashboard-title">Weather Dashboard</h1>
+    </header>
+    <div class="container">
+        <aside class="search-and-buttons">
+            <!--Sidebar for search and city buttons-->
+            <h2>Search for a City:</h2>
+            <div class="search">
+                <input type="text" id="cityInput" placeholder="Enter city">
+                <button id="getWeatherButton">Search</button>
+            </div>
+            <div class="divider"></div>
+            <div class="city-buttons">
+                <!--Container for city buttons-->
+                <button class="city-button" data-city="New York">New York</button>
+                <button class="city-button" data-city="Los Angeles">Los Angeles</button>
+                <button class="city-button" data-city="Chicago">Chicago</button>
+                <button class="city-button" data-city="Austin">Austin</button>
+            </div>
+        </aside>
+        <div class="main-content">
+            <!-- Main Content section for weather info-->
+            <div class="current-weather">
+                <!-- Current weather information-->
+                <div class="city-details">
+                    <!-- City name and date-->
+                    <h2 id="city-name">City Name</h2>
+                    <p id="current-date">Date</p>
+                </div>
+                <div class="weather-details">
+                    <!-- Temperature, wind, and humidity info-->
+                    <p>Temperature: <span id="temperature">23°F</span></p>
+                    <p>Wind: <span id="wind">5 MPH</span></p>
+                    <p>Humidity: <span id="humidity">50%</span></p>
+                    <!--image element for the weather icon-->
+                    <img id="weather-icon" src="" alt="Weather Icon">
+                </div>
+            </div>
+            <div class="forecast">
+                <!-- 5 day forecast section-->
+                <h2>5-Day Forecast</h2>
+                <div class="forecast-details">
+                    <!-- container for individual forecast days-->
+                    <div class="day">
+                        <p class="date">Date 1</p>
+                        <img id="weather-icon" src="" alt="Weather Icon">
+                        <p>Temperature: <span class="temp">68°F</span></p>
+                        <p>Wind: <span class="wind">8 MPH</span></p>
+                        <p>Humidity: <span class="humidity">55%</span></p>
+                    </div>
+                    <div class="day">
+                        <p class="date">Date 2</p>
+                        <img id="weather-icon" src="" alt="Weather Icon">
+                        <p>Temperature: <span class="temp">70°F</span></p>
+                        <p>Wind: <span class="wind">7 MPH</span></p>
+                        <p>Humidity: <span class="humidity">52%</span></p>
+                    </div>
+                    <div class="day">
+                        <p class="date">Date 3</p>
+                        <img id="weather-icon" src="" alt="Weather Icon">
+                        <p>Temperature: <span class="temp">72°F</span></p>
+                        <p>Wind: <span class="wind">6 MPH</span></p>
+                        <p>Humidity: <span class="humidity">50%</span></p>
+                    </div>
+                    <div class="day">
+                        <p class="date">Date 4</p>
+                        <img id="weather-icon" src="" alt="Weather Icon">
+                        <p>Temperature: <span class="temp">71°F</span></p>
+                        <p>Wind: <span class="wind">7 MPH</span></p>
+                        <p>Humidity: <span class="humidity">53%</span></p>
+                    </div>
+                    <div class="day">
+                        <p class="date">Date 5</p>
+                        <img id="weather-icon" src="" alt="Weather Icon">
+                        <p>Temperature: <span class="temp">69°F</span></p>
+                        <p>Wind: <span class="wind">8 MPH</span></p>
+                        <p>Humidity: <span class="humidity">55%</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./assets/js/script.js"></script>
+</body>
+</html>
+
+
