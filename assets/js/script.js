@@ -156,4 +156,4 @@ function get5DayForecast(cityName) {
   }
 
     // Clear local storage (remove this line if you want to keep search history)
-  //localStorage.clear();
+  localStorage.clear();
