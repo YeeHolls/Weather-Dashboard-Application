@@ -1,6 +1,7 @@
+
 // Function to fetch weather data from the OpenWeather API
 function getWeatherData(cityName) {
-    const apiKey = 'b5a8ff838bd332fe90170a057d24eae0';
+    const apiKey = "b346474f0c3706b4340366bfc3cc8be3";
     const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=imperial`;
   
     fetch(apiUrl)
@@ -96,7 +97,7 @@ function getWeatherData(cityName) {
   
 // Function to fetch 5-day weather forecast data
 function get5DayForecast(cityName) {
-    const apiKey = 'b5a8ff838bd332fe90170a057d24eae0';
+    const apiKey = "b346474f0c3706b4340366bfc3cc8be3";
     const apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${apiKey}&units=imperial`;
   
     fetch(apiUrl)
