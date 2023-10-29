@@ -1,9 +1,10 @@
-
 // Function to fetch weather data from the OpenWeather API
 function getWeatherData(cityName) {
+    // Your OpenWeatherMap API key and API endpoint for current weather data
     const apiKey = "b346474f0c3706b4340366bfc3cc8be3";
     const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=imperial`;
   
+    // Fetch the weather data
     fetch(apiUrl)
       .then((response) => response.json())
       .then((data) => {
@@ -22,13 +23,17 @@ function getWeatherData(cityName) {
         document.getElementById('temperature').textContent = `${temperature} °F`;
         document.getElementById('humidity').textContent = `${humidity} %`;
         document.getElementById('wind').textContent = `${windSpeed} MPH`;
+
         //Updates the weather icon
         displayWeatherIcon(weatherIcon, document.getElementById('weather-icon'));
+
         // Store the city in local storage for the search history
         storeCityInLocalStorage(city);
+
         //Call the get5DayForecast function to update the 5-day forecast
         get5DayForecast(city);
       })
+      // Error Message
       .catch((error) => {
         console.error('Error fetching weather data:', error);
       });
@@ -56,7 +61,7 @@ function getWeatherData(cityName) {
   
   // Function to store the searched city in local storage
   function storeCityInLocalStorage(city) {
-    // Retrieve the existing search history
+    // Retrieve the existing search history from local storage
     let searchHistory = JSON.parse(localStorage.getItem('searchHistory')) || [];
     
     //Checks if the city is not already in the search history
@@ -72,10 +77,14 @@ function getWeatherData(cityName) {
   
   // Function to update the city buttons based on search history
   function updateCityButtons() {
+    // Retrieve the search history from local storage
     const searchHistory = JSON.parse(localStorage.getItem('searchHistory'))
+
+    // Get the container for city buttons
     const cityButtonsDiv = document.querySelector('.city-buttons');
     cityButtonsDiv.innerHTML = '';
   
+    // Loop through the search history and create buttons
     searchHistory.forEach((city) => {
       const button = document.createElement('button');
       button.className = 'city-button';
@@ -86,8 +95,11 @@ function getWeatherData(cityName) {
   }
   
   // Event listeners
+
+  // Listen for a click on the search button
   document.getElementById('getWeatherButton').addEventListener('click', handleCitySearch);
-  
+
+  // Listen for a click on a city button in the history
   document.querySelector('.city-buttons').addEventListener('click', (event) => {
     if (event.target.classList.contains('city-button')) {
         const cityName = event.target.getAttribute('data-city');
@@ -97,13 +109,17 @@ function getWeatherData(cityName) {
   
 // Function to fetch 5-day weather forecast data
 function get5DayForecast(cityName) {
+    // OpenWeatherMap API key and API endpoint for 5-day forecast
     const apiKey = "b346474f0c3706b4340366bfc3cc8be3";
     const apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${apiKey}&units=imperial`;
   
+    // Fetch the 5-day forecast data
     fetch(apiUrl)
       .then((response) => response.json())
       .then((data) => {
         const forecastDatabyDate = {};
+
+        // Group forecast data by date
         data.list.forEach ((forecast) => {
             const date = new Date(forecast.dt_txt).toLocaleDateString('en-US');
             if (!forecastDatabyDate[date]) {
@@ -112,8 +128,10 @@ function get5DayForecast(cityName) {
             forecastDatabyDate[date].push(forecast);
         });
 
+        // Get the list of the forecast dates
         const forecastDates = Object.keys(forecastDatabyDate);
         
+        // Update the HTML for the next 5 days
         forecastDates.slice(0, 5).forEach((date, index) => {
             const forecastData = forecastDatabyDate[date];
             const forecastDay = document.querySelector(`.forecast-details .day:nth-child(${index + 1})`);
@@ -137,4 +155,5 @@ function get5DayForecast(cityName) {
       });
   }
 
-  localStorage.clear();
+    // Clear local storage (remove this line if you want to keep search history)
+  //localStorage.clear();
